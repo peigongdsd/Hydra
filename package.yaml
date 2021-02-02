@@ -21,6 +21,11 @@ description:         Please see the README on GitHub at <https://github.com/peig
 
 dependencies:
 - base >= 4.7 && < 5
+- http-conduit
+- base64-bytestring
+- raw-strings-qq
+- regex-tdfa
+
 
 library:
   source-dirs: src

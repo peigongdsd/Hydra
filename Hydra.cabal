@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 3c865208c0e4f006cc83b9625d48f49cc9f46da04a61e26991e9c5d10bb41f95
+-- hash: d80f6e20382a05f7ab55613c228b57281d21e98b9ee10bd38060871b8d707307
 
 name:           Hydra
 version:        0.1.0.0
@@ -28,12 +28,19 @@ source-repository head
 library
   exposed-modules:
       Lib
+      Subscribe.Fetch
+      Subscribe.Persistent
+      Subscribe.Vars
   other-modules:
       Paths_Hydra
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , base64-bytestring
+    , http-conduit
+    , raw-strings-qq
+    , regex-tdfa
   default-language: Haskell2010
 
 executable Hydra-exe
@@ -46,6 +53,10 @@ executable Hydra-exe
   build-depends:
       Hydra
     , base >=4.7 && <5
+    , base64-bytestring
+    , http-conduit
+    , raw-strings-qq
+    , regex-tdfa
   default-language: Haskell2010
 
 test-suite Hydra-test
@@ -59,4 +70,8 @@ test-suite Hydra-test
   build-depends:
       Hydra
     , base >=4.7 && <5
+    , base64-bytestring
+    , http-conduit
+    , raw-strings-qq
+    , regex-tdfa
   default-language: Haskell2010
