@@ -6,9 +6,11 @@ module Subscribe.Fetch(
     genConfigJson
 ) where
 
+import Global ( InternalError(Error) )
+
 import Subscribe.Vars ( defConfig, subsURL )
 import Subscribe.Persistent
-    ( ProxyConfig(..), defaultProxyConfig, InternalError(Error) )
+    ( ProxyConfig(..), defaultProxyConfig )
 import Control.Exception ( throw )
 
 import Network.HTTP.Conduit ( simpleHttp )

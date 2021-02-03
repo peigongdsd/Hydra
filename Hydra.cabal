@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d80f6e20382a05f7ab55613c228b57281d21e98b9ee10bd38060871b8d707307
+-- hash: c1d94d7d2a95cfbffebbef0a6f759776f8b6940b5072a93a694a30a359317bbd
 
 name:           Hydra
 version:        0.1.0.0
@@ -27,6 +27,11 @@ source-repository head
 
 library
   exposed-modules:
+      Control.TrojanC
+      Control.Vars
+      Global
+      Interface.Server
+      Interface.Vars
       Lib
       Subscribe.Fetch
       Subscribe.Persistent
@@ -38,9 +43,12 @@ library
   build-depends:
       base >=4.7 && <5
     , base64-bytestring
+    , bytestring
     , http-conduit
+    , process
     , raw-strings-qq
     , regex-tdfa
+    , warp
   default-language: Haskell2010
 
 executable Hydra-exe
@@ -54,9 +62,12 @@ executable Hydra-exe
       Hydra
     , base >=4.7 && <5
     , base64-bytestring
+    , bytestring
     , http-conduit
+    , process
     , raw-strings-qq
     , regex-tdfa
+    , warp
   default-language: Haskell2010
 
 test-suite Hydra-test
@@ -71,7 +82,10 @@ test-suite Hydra-test
       Hydra
     , base >=4.7 && <5
     , base64-bytestring
+    , bytestring
     , http-conduit
+    , process
     , raw-strings-qq
     , regex-tdfa
+    , warp
   default-language: Haskell2010

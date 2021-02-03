@@ -25,6 +25,9 @@ dependencies:
 - base64-bytestring
 - raw-strings-qq
 - regex-tdfa
+- bytestring
+- warp
+- process
 
 
 library:
