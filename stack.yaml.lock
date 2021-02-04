@@ -3,7 +3,14 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages: []
+packages:
+- completed:
+    hackage: language-javascript-0.6.0.11@sha256:48576021b3917fa9cb88404e6f3b216a660f14786a808de289195f75817c0a3e,3792
+    pantry-tree:
+      size: 2284
+      sha256: d2547c2890f243fd03ca9ebf088e283ec4fa133300c385ce001cbcfc3b2d0feb
+  original:
+    hackage: language-javascript-0.6.0.11
 snapshots:
 - completed:
     size: 563098

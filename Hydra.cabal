@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c1d94d7d2a95cfbffebbef0a6f759776f8b6940b5072a93a694a30a359317bbd
+-- hash: 2b5a92f2075a54ed58b98fb140c4075bc50e869a1e0df0940b0da1c1b950a4ae
 
 name:           Hydra
 version:        0.1.0.0
@@ -49,6 +49,8 @@ library
     , raw-strings-qq
     , regex-tdfa
     , warp
+    , yesod
+    , yesod-static
   default-language: Haskell2010
 
 executable Hydra-exe
@@ -68,6 +70,8 @@ executable Hydra-exe
     , raw-strings-qq
     , regex-tdfa
     , warp
+    , yesod
+    , yesod-static
   default-language: Haskell2010
 
 test-suite Hydra-test
@@ -88,4 +92,6 @@ test-suite Hydra-test
     , raw-strings-qq
     , regex-tdfa
     , warp
+    , yesod
+    , yesod-static
   default-language: Haskell2010

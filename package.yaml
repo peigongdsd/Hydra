@@ -28,6 +28,8 @@ dependencies:
 - bytestring
 - warp
 - process
+- yesod
+- yesod-static
 
 
 library:
