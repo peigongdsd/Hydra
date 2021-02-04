@@ -1,8 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Subscribe.Persistent(
-    ProxyConfig(ProxyConfig, name, remoteAddr, remotePort, password),
     Persistent (Persistent, current, fallback),
-    PerConf, defaultProxyConfig,
     update, rollback, get,
 ) where
 
@@ -11,12 +9,6 @@ import qualified Data.ByteString as B
 import Control.Exception ( throw )
 import Global ( InternalError(Error) )
 
-data ProxyConfig = ProxyConfig {
-    name :: B.ByteString,
-    remoteAddr :: B.ByteString,
-    remotePort :: B.ByteString,
-    password :: B.ByteString 
-} deriving (Show) 
 
 data Persistent a = Persistent {
     current :: Maybe a,
@@ -34,7 +26,5 @@ get :: Persistent a -> a
 get (Persistent (Just x) _) = x
 get (Persistent Nothing _) = throw . Error $ "No profiles to get, try refresh!!"
 
-type PerConf = IORef (Persistent [ProxyConfig])
-defaultProxyConfig :: ProxyConfig
-defaultProxyConfig = ProxyConfig "DefaultName" "DefaultAddr" "DefaultPort" "DefaultPassword" 
+
 

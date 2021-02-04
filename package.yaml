@@ -30,6 +30,7 @@ dependencies:
 - process
 - yesod
 - yesod-static
+- aeson
 
 
 library:

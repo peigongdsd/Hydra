@@ -1,6 +1,6 @@
 module Main where
 
-import Lib
+import Interface.Server
 
 main :: IO ()
-main = someFunc
+main = warp 3000 app

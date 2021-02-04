@@ -1,13 +1,30 @@
 {-# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE OverloadedStrings #-}
 
 module Subscribe.Vars(
+    ProxyConfig(..),
+    defaultProxyConfig,
     subsURL,
     defConfig
 ) where
 
+import GHC.Generics
 import qualified Data.ByteString as B 
 import qualified Data.ByteString.Lazy as BZ
 import Text.RawString.QQ ( r )
+
+data ProxyConfig = ProxyConfig {
+    name :: B.ByteString,
+    remoteAddr :: B.ByteString,
+    remotePort :: B.ByteString,
+    password :: B.ByteString,
+    localPort :: Int,
+    localAddr :: B.ByteString,
+    logLevel :: Int
+} deriving ( Show ) 
+
+defaultProxyConfig :: ProxyConfig
+defaultProxyConfig = undefined
 
 subsURL :: String 
 subsURL = "https://s.trojanflare.com/subscription/shadowrocket/73f4af2f-a14f-413c-9382-5b0bb3cde889"
@@ -22,7 +39,7 @@ defConfig = [r|{
     "password": [
         "__PASSWORD__"
     ],
-    "log_level": 1,
+    "log_level": 1,https://prod.liveshare.vsengsaas.visualstudio.com/join?AD034C4A1629BD3D3F57BAB02C4E42087A01
     "ssl": {
         "verify": true,
         "verify_hostname": true,

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2b5a92f2075a54ed58b98fb140c4075bc50e869a1e0df0940b0da1c1b950a4ae
+-- hash: 5525208fbeab1f049894a747dc6fd388c0c2fef446b67d3178c24a0c3dd29a8d
 
 name:           Hydra
 version:        0.1.0.0
@@ -30,6 +30,7 @@ library
       Control.TrojanC
       Control.Vars
       Global
+      Interface.CmdLineUI
       Interface.Server
       Interface.Vars
       Lib
@@ -41,7 +42,8 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
     , base64-bytestring
     , bytestring
     , http-conduit
@@ -62,6 +64,7 @@ executable Hydra-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       Hydra
+    , aeson
     , base >=4.7 && <5
     , base64-bytestring
     , bytestring
@@ -84,6 +87,7 @@ test-suite Hydra-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       Hydra
+    , aeson
     , base >=4.7 && <5
     , base64-bytestring
     , bytestring
